@@ -15,10 +15,10 @@ import json from 'rollup-plugin-json';
 export default {
     input: 'src/index.ts', // Path relative to package.json
     output: {
-        name: 'myibrary',
+        name: 'mylibrary',
         exports: 'named',
     },
-    external: ['vue', 'axios'],
+    external: ['vue'],
     plugins: [
       postcss({
         plugins: [
@@ -48,10 +48,16 @@ export default {
       }),
       typescript(),
       vue({
-          css: true, // Dynamically inject css as a <style> tag
-          compileTemplate: true, // Explicitly convert template to render function
+        css: false
+          // css: true, // Dynamically inject css as a <style> tag
+          // compileTemplate: true, // Explicitly convert template to render function
       }),
-      buble(), // Transpile to ES5
+      buble({
+        runtimeHelpers: true,
+        sourceMap: false,
+        extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue'],
+        exclude: 'node_modules/**'
+      }), // Transpile to ES5
       babel({
         runtimeHelpers: true,
         sourceMap: false,

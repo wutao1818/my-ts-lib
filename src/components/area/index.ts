@@ -1,7 +1,7 @@
-// import MyArea from './index.vue';
+import MyArea from './index.vue';
 
-// MyArea.install = (Vue: any) => {
-//   Vue.component(MyArea.name, MyArea);
-// }
+MyArea.install = (Vue: any) => {
+  Vue.component(MyArea.name, MyArea);
+}
 
-// export { MyArea };
+export { MyArea };

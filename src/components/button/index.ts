@@ -4,4 +4,4 @@ MyButton.install = (Vue: any) => {
   Vue.component(MyButton.name, MyButton);
 }
 
-export { MyButton }
+export { MyButton };
